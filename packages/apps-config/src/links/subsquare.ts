@@ -13,8 +13,9 @@ export const Subsquare: ExternalDef = {
     Basilisk: 'basilisk',
     Bifrost: 'bifrost',
     Centrifuge: 'centrifuge',
+    Collectives: 'collectives',
     Crust: 'crust',
-    'Darwinia Crab': 'crab',
+    Darwinia2: 'darwinia2',
     HydraDX: 'hydradx',
     Interlay: 'interlay',
     Karura: 'karura',
@@ -26,6 +27,7 @@ export const Subsquare: ExternalDef = {
     Polkadot: 'polkadot',
     Rococo: 'rococo',
     'Turing Network': 'turing',
+    'Westend Collectives': 'westend-collectives',
     Zeitgeist: 'zeitgeist',
     kintsugi: 'kintsugi'
   },

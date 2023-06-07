@@ -47,8 +47,8 @@ import equilibrium from './equilibrium.js';
 import fantour from './fantour.js';
 // See https://github.com/polkadot-js/apps/pull/9243
 // import fragnova from './fragnova.js';
-// See https://github.com/polkadot-js/apps/pull/9243
-// import frequency from './frequency.js';
+import ferrum from './ferrum.js';
+import frequency from './frequency.js';
 import galital from './galital.js';
 import galitalParachain from './galital-parachain.js';
 import galois from './galois.js';
@@ -143,7 +143,6 @@ const spec: Record<string, OverrideBundleDefinition> = {
   'Darwinia PC2': pangolin,
   Equilibrium: equilibrium,
   Genshiro: genshiro,
-  'Genshiro Rococo Testnet': genshiro,
   Pangolin: pangolin,
   Pangoro: pangoro,
   VLN: vln,
@@ -196,9 +195,9 @@ const spec: Record<string, OverrideBundleDefinition> = {
   // See https://github.com/polkadot-js/apps/pull/9243
   // fragnova,
   // 'fragnova-testnet': fragnova,
-  // See https://github.com/polkadot-js/apps/pull/9243
-  // frequency,
-  // 'frequency-rococo': frequency,
+  'ferrum-parachain': ferrum,
+  frequency,
+  'frequency-rococo': frequency,
   galital,
   'galital-collator': galitalParachain,
   gamepower,
@@ -217,6 +216,7 @@ const spec: Record<string, OverrideBundleDefinition> = {
   'jupiter-prep': jupiter,
   'jupiter-rococo': jupiterRococo,
   'jur-chain': jur,
+  'jur-node': jur,
   kerria: parallel,
   khala,
   'kintsugi-parachain': interbtc,
