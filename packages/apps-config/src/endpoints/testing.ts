@@ -207,7 +207,7 @@ export const testChains: Omit<EndpointOption, 'teleport'>[] = [
     info: 'datahighway',
     isDisabled: true,
     providers: {
-      MXC: 'wss://spreehafen.datahighway.com'
+      // MXC: 'wss://spreehafen.datahighway.com' // https://github.com/polkadot-js/apps/issues/9601
     },
     text: 'Spreehafen',
     ui: {
@@ -580,6 +580,7 @@ export const testChains: Omit<EndpointOption, 'teleport'>[] = [
     info: 'moonbaseAlpha',
     providers: {
       Blast: 'wss://moonbase-alpha.public.blastapi.io',
+      Dwellir: 'wss://moonbase-rpc.dwellir.com',
       'Moonbeam Foundation': 'wss://wss.api.moonbase.moonbeam.network',
       OnFinality: 'wss://moonbeam-alpha.api.onfinality.io/public-ws',
       UnitedBloc: 'wss://moonbase.unitedbloc.com'
@@ -906,12 +907,12 @@ export const testChains: Omit<EndpointOption, 'teleport'>[] = [
   {
     info: 'thebifrost-testnet',
     providers: {
-      'Pilab #1': 'wss://public-01.testnet.thebifrost.io/ws',
-      'Pilab #2': 'wss://public-02.testnet.thebifrost.io/ws'
+      'Pilab #1': 'wss://public-01.testnet.bifrostnetwork.com/wss',
+      'Pilab #2': 'wss://public-02.testnet.bifrostnetwork.com/wss'
     },
     text: 'The Bifrost Testnet',
     ui: {
-      color: '#5a25f0',
+      color: '#FF474C',
       logo: nodesThebifrostPNG
     }
   },

@@ -59432,7 +59432,13 @@ export const typesBundle = {
             },
             "HostData": {
               "node_id": "Option<OpaquePeerId>",
-              "base_url": "Option<Vec<u8>>"
+              "base_url": "Option<Vec<u8>>",
+              "region": "Region"
+            },
+            "Region": {
+              "_enum": [
+                "Europe"
+              ]
             },
             "LoAuthorityListStorageVersion": {
               "_enum": [
@@ -59878,7 +59884,7 @@ export const typesBundle = {
       "rpc": {
         "xyk": {
           "calculate_buy_price": {
-            "description": "",
+            "description": "Calculates and returns sold_token_amount while providing bought_token_amount and respective reserves",
             "params": [
               {
                 "name": "input_reserve",
@@ -59896,7 +59902,7 @@ export const typesBundle = {
             "type": "XYKRpcResult<Balance>"
           },
           "calculate_sell_price": {
-            "description": "",
+            "description": "Calculates and returns bought_token_amount while providing sold_token_amount and respective reserves",
             "params": [
               {
                 "name": "input_reserve",
@@ -59914,7 +59920,7 @@ export const typesBundle = {
             "type": "XYKRpcResult<Balance>"
           },
           "get_burn_amount": {
-            "description": "",
+            "description": "Returns amounts of tokens received by burning provided liquidity_token_amount in pool of provided token ids",
             "params": [
               {
                 "name": "first_asset_id",
@@ -59932,7 +59938,7 @@ export const typesBundle = {
             "type": "RPCAmountsResult<Balance>"
           },
           "calculate_sell_price_id": {
-            "description": "",
+            "description": "Same as calculate_sell_price, but providing token_id instead of reserves. Reserves are fetched by function.",
             "params": [
               {
                 "name": "sold_token_id",
@@ -59950,7 +59956,7 @@ export const typesBundle = {
             "type": "XYKRpcResult<Balance>"
           },
           "calculate_buy_price_id": {
-            "description": "",
+            "description": "Same as calculate_buy_price, but providing token_id instead of reserves. Reserves are fetched by function.",
             "params": [
               {
                 "name": "sold_token_id",
@@ -59968,7 +59974,7 @@ export const typesBundle = {
             "type": "XYKRpcResult<Balance>"
           },
           "calculate_rewards_amount": {
-            "description": "",
+            "description": "Calculate rewards amount of liquidity token id for the user",
             "params": [
               {
                 "name": "user",
@@ -59982,7 +59988,7 @@ export const typesBundle = {
             "type": "XYKRpcResult<Balance>"
           },
           "calculate_balanced_sell_amount": {
-            "description": "",
+            "description": "Calculates how much amount x we need to swap from total_amount, so that after y = swap(x), the resulting balance equals (total_amount - x) / y = pool_x / pool_y - the resulting amounts can then be used to `mint_liquidity` with minimal leftover after operation",
             "params": [
               {
                 "name": "total_amount",
@@ -59996,7 +60002,7 @@ export const typesBundle = {
             "type": "XYKRpcResult<Balance>"
           },
           "get_max_instant_unreserve_amount": {
-            "description": "",
+            "description": "Instant unreserve amount",
             "params": [
               {
                 "name": "user",
@@ -60007,7 +60013,7 @@ export const typesBundle = {
                 "type": "TokenId"
               }
             ],
-            "type": "Balance"
+            "type": "XYKRpcResult<Balance>"
           },
           "get_max_instant_burn_amount": {
             "description": "",
@@ -60021,9 +60027,39 @@ export const typesBundle = {
                 "type": "TokenId"
               }
             ],
-            "type": "Balance"
+            "type": "XYKRpcResult<Balance>"
           },
-          "get_vesting_locked_at": {
+          "is_sell_asset_lock_free": {
+            "description": "",
+            "params": [
+              {
+                "name": "path",
+                "type": "Vec<TokenId>"
+              },
+              {
+                "name": "input_amount",
+                "type": "Balance"
+              }
+            ],
+            "type": "Option<bool>"
+          },
+          "is_buy_asset_lock_free": {
+            "description": "",
+            "params": [
+              {
+                "name": "path",
+                "type": "Vec<TokenId>"
+              },
+              {
+                "name": "input_amount",
+                "type": "Balance"
+              }
+            ],
+            "type": "Option<bool>"
+          }
+        },
+        "vesting": {
+          "getVestingLockedAt": {
             "description": "",
             "params": [
               {
@@ -60083,7 +60119,7 @@ export const typesBundle = {
       "rpc": {
         "xyk": {
           "calculate_buy_price": {
-            "description": "",
+            "description": "Calculates and returns sold_token_amount while providing bought_token_amount and respective reserves",
             "params": [
               {
                 "name": "input_reserve",
@@ -60101,7 +60137,7 @@ export const typesBundle = {
             "type": "XYKRpcResult<Balance>"
           },
           "calculate_sell_price": {
-            "description": "",
+            "description": "Calculates and returns bought_token_amount while providing sold_token_amount and respective reserves",
             "params": [
               {
                 "name": "input_reserve",
@@ -60119,7 +60155,7 @@ export const typesBundle = {
             "type": "XYKRpcResult<Balance>"
           },
           "get_burn_amount": {
-            "description": "",
+            "description": "Returns amounts of tokens received by burning provided liquidity_token_amount in pool of provided token ids",
             "params": [
               {
                 "name": "first_asset_id",
@@ -60137,7 +60173,7 @@ export const typesBundle = {
             "type": "RPCAmountsResult<Balance>"
           },
           "calculate_sell_price_id": {
-            "description": "",
+            "description": "Same as calculate_sell_price, but providing token_id instead of reserves. Reserves are fetched by function.",
             "params": [
               {
                 "name": "sold_token_id",
@@ -60155,7 +60191,7 @@ export const typesBundle = {
             "type": "XYKRpcResult<Balance>"
           },
           "calculate_buy_price_id": {
-            "description": "",
+            "description": "Same as calculate_buy_price, but providing token_id instead of reserves. Reserves are fetched by function.",
             "params": [
               {
                 "name": "sold_token_id",
@@ -60173,7 +60209,7 @@ export const typesBundle = {
             "type": "XYKRpcResult<Balance>"
           },
           "calculate_rewards_amount": {
-            "description": "",
+            "description": "Calculate rewards amount of liquidity token id for the user",
             "params": [
               {
                 "name": "user",
@@ -60187,7 +60223,7 @@ export const typesBundle = {
             "type": "XYKRpcResult<Balance>"
           },
           "calculate_balanced_sell_amount": {
-            "description": "",
+            "description": "Calculates how much amount x we need to swap from total_amount, so that after y = swap(x), the resulting balance equals (total_amount - x) / y = pool_x / pool_y - the resulting amounts can then be used to `mint_liquidity` with minimal leftover after operation",
             "params": [
               {
                 "name": "total_amount",
@@ -60201,7 +60237,7 @@ export const typesBundle = {
             "type": "XYKRpcResult<Balance>"
           },
           "get_max_instant_unreserve_amount": {
-            "description": "",
+            "description": "Instant unreserve amount",
             "params": [
               {
                 "name": "user",
@@ -60212,7 +60248,7 @@ export const typesBundle = {
                 "type": "TokenId"
               }
             ],
-            "type": "Balance"
+            "type": "XYKRpcResult<Balance>"
           },
           "get_max_instant_burn_amount": {
             "description": "",
@@ -60226,9 +60262,39 @@ export const typesBundle = {
                 "type": "TokenId"
               }
             ],
-            "type": "Balance"
+            "type": "XYKRpcResult<Balance>"
           },
-          "get_vesting_locked_at": {
+          "is_sell_asset_lock_free": {
+            "description": "",
+            "params": [
+              {
+                "name": "path",
+                "type": "Vec<TokenId>"
+              },
+              {
+                "name": "input_amount",
+                "type": "Balance"
+              }
+            ],
+            "type": "Option<bool>"
+          },
+          "is_buy_asset_lock_free": {
+            "description": "",
+            "params": [
+              {
+                "name": "path",
+                "type": "Vec<TokenId>"
+              },
+              {
+                "name": "input_amount",
+                "type": "Balance"
+              }
+            ],
+            "type": "Option<bool>"
+          }
+        },
+        "vesting": {
+          "getVestingLockedAt": {
             "description": "",
             "params": [
               {
@@ -70356,6 +70422,603 @@ export const typesBundle = {
           "types": {}
         }
       ]
+    },
+    "peaq-node": {
+      "rpc": {
+        "oracle": {
+          "getValue": {
+            "description": "Retrieves the oracle value for a given key.",
+            "params": [
+              {
+                "name": "providerId",
+                "type": "RpcDataProviderId"
+              },
+              {
+                "name": "key",
+                "type": "OracleKey"
+              },
+              {
+                "name": "at",
+                "type": "BlockHash",
+                "isHistoric": true,
+                "isOptional": true
+              }
+            ],
+            "type": "Option<TimestampedValue>",
+            "isSubscription": false,
+            "jsonrpc": "oracle_getValue",
+            "method": "getValue",
+            "section": "oracle"
+          },
+          "getAllValues": {
+            "description": "Retrieves all oracle values.",
+            "params": [
+              {
+                "name": "providerId",
+                "type": "RpcDataProviderId"
+              },
+              {
+                "name": "at",
+                "type": "BlockHash",
+                "isHistoric": true,
+                "isOptional": true
+              }
+            ],
+            "type": "Vec<(OracleKey, Option<TimestampedValue>)>",
+            "isSubscription": false,
+            "jsonrpc": "oracle_getAllValues",
+            "method": "getAllValues",
+            "section": "oracle"
+          }
+        },
+        "peaqdid": {
+          "readAttribute": {
+            "description": "Read attribute",
+            "params": [
+              {
+                "name": "didAccount",
+                "type": "AccountId"
+              },
+              {
+                "name": "name",
+                "type": "Bytes"
+              },
+              {
+                "name": "at",
+                "type": "BlockHash",
+                "isHistoric": true,
+                "isOptional": true
+              }
+            ],
+            "type": "Option<RPCAttribute>",
+            "isSubscription": false,
+            "jsonrpc": "peaqdid_readAttribute",
+            "method": "readAttribute",
+            "section": "peaqdid"
+          }
+        },
+        "peaqstorage": {
+          "readAttribute": {
+            "description": "Read attribute",
+            "params": [
+              {
+                "name": "didAccount",
+                "type": "AccountId"
+              },
+              {
+                "name": "itemType",
+                "type": "Bytes"
+              },
+              {
+                "name": "at",
+                "type": "BlockHash",
+                "isHistoric": true,
+                "isOptional": true
+              }
+            ],
+            "type": "Option<StorageRpcResult>",
+            "isSubscription": false,
+            "jsonrpc": "peaqstorage_readAttribute",
+            "method": "readAttribute",
+            "section": "peaqstorage"
+          }
+        }
+      },
+      "types": [
+        {
+          "minmax": [
+            0,
+            null
+          ],
+          "types": {
+            "CallOf": "Call",
+            "DispatchTime": {
+              "_enum": {
+                "At": "BlockNumber",
+                "After": "BlockNumber"
+              }
+            },
+            "ScheduleTaskIndex": "u32",
+            "DelayedOrigin": {
+              "delay": "BlockNumber",
+              "origin": "PalletsOrigin"
+            },
+            "AuthorityOrigin": "DelayedOrigin",
+            "StorageValue": "Vec<u8>",
+            "GraduallyUpdate": {
+              "key": "StorageKey",
+              "targetValue": "StorageValue",
+              "perBlock": "StorageValue"
+            },
+            "StorageKeyBytes": "Vec<u8>",
+            "StorageValueBytes": "Vec<u8>",
+            "RpcDataProviderId": "Text",
+            "DataProviderId": "u8",
+            "TimestampedValue": {
+              "value": "OracleValue",
+              "timestamp": "Moment"
+            },
+            "TimestampedValueOf": "TimestampedValue",
+            "OrderedSet": "Vec<AccountId>",
+            "OrmlAccountData": {
+              "free": "Balance",
+              "frozen": "Balance",
+              "reserved": "Balance"
+            },
+            "OrmlBalanceLock": {
+              "amount": "Balance",
+              "id": "LockIdentifier"
+            },
+            "AuctionInfo": {
+              "bid": "Option<(AccountId, Balance)>",
+              "start": "BlockNumber",
+              "end": "Option<BlockNumber>"
+            },
+            "DelayedDispatchTime": {
+              "_enum": {
+                "At": "BlockNumber",
+                "After": "BlockNumber"
+              }
+            },
+            "DispatchId": "u32",
+            "Price": "FixedU128",
+            "OrmlVestingSchedule": {
+              "start": "BlockNumber",
+              "period": "BlockNumber",
+              "periodCount": "u32",
+              "perPeriod": "Compact<Balance>"
+            },
+            "VestingScheduleOf": "OrmlVestingSchedule",
+            "OrmlCurrencyId": "u8",
+            "PoolInfo": {
+              "totalShares": "Share",
+              "rewards": "BTreeMap<OrmlCurrencyId, (Balance, Balance)>"
+            },
+            "CompactBalance": "Compact<Balance>",
+            "PoolInfoV0": {
+              "totalShares": "Compact<Share>",
+              "totalRewards": "CompactBalance",
+              "totalWithdrawnRewards": "CompactBalance"
+            },
+            "Share": "u128",
+            "OracleValue": "FixedU128",
+            "RPCAttribute": {
+              "name": "Bytes",
+              "value": "Bytes",
+              "validity": "Bytes",
+              "created": "Moment"
+            },
+            "StorageRpcResult": {
+              "item": "Bytes"
+            },
+            "Keys": "SessionKeys1"
+          }
+        }
+      ],
+      "alias": {
+        "tokens": {
+          "AccountData": "OrmlAccountData",
+          "BalanceLock": "OrmlBalanceLock"
+        }
+      }
+    },
+    "peaq-node-dev": {
+      "rpc": {
+        "oracle": {
+          "getValue": {
+            "description": "Retrieves the oracle value for a given key.",
+            "params": [
+              {
+                "name": "providerId",
+                "type": "RpcDataProviderId"
+              },
+              {
+                "name": "key",
+                "type": "OracleKey"
+              },
+              {
+                "name": "at",
+                "type": "BlockHash",
+                "isHistoric": true,
+                "isOptional": true
+              }
+            ],
+            "type": "Option<TimestampedValue>",
+            "isSubscription": false,
+            "jsonrpc": "oracle_getValue",
+            "method": "getValue",
+            "section": "oracle"
+          },
+          "getAllValues": {
+            "description": "Retrieves all oracle values.",
+            "params": [
+              {
+                "name": "providerId",
+                "type": "RpcDataProviderId"
+              },
+              {
+                "name": "at",
+                "type": "BlockHash",
+                "isHistoric": true,
+                "isOptional": true
+              }
+            ],
+            "type": "Vec<(OracleKey, Option<TimestampedValue>)>",
+            "isSubscription": false,
+            "jsonrpc": "oracle_getAllValues",
+            "method": "getAllValues",
+            "section": "oracle"
+          }
+        },
+        "peaqdid": {
+          "readAttribute": {
+            "description": "Read attribute",
+            "params": [
+              {
+                "name": "didAccount",
+                "type": "AccountId"
+              },
+              {
+                "name": "name",
+                "type": "Bytes"
+              },
+              {
+                "name": "at",
+                "type": "BlockHash",
+                "isHistoric": true,
+                "isOptional": true
+              }
+            ],
+            "type": "Option<RPCAttribute>",
+            "isSubscription": false,
+            "jsonrpc": "peaqdid_readAttribute",
+            "method": "readAttribute",
+            "section": "peaqdid"
+          }
+        },
+        "peaqstorage": {
+          "readAttribute": {
+            "description": "Read attribute",
+            "params": [
+              {
+                "name": "didAccount",
+                "type": "AccountId"
+              },
+              {
+                "name": "itemType",
+                "type": "Bytes"
+              },
+              {
+                "name": "at",
+                "type": "BlockHash",
+                "isHistoric": true,
+                "isOptional": true
+              }
+            ],
+            "type": "Option<StorageRpcResult>",
+            "isSubscription": false,
+            "jsonrpc": "peaqstorage_readAttribute",
+            "method": "readAttribute",
+            "section": "peaqstorage"
+          }
+        }
+      },
+      "types": [
+        {
+          "minmax": [
+            0,
+            null
+          ],
+          "types": {
+            "CallOf": "Call",
+            "DispatchTime": {
+              "_enum": {
+                "At": "BlockNumber",
+                "After": "BlockNumber"
+              }
+            },
+            "ScheduleTaskIndex": "u32",
+            "DelayedOrigin": {
+              "delay": "BlockNumber",
+              "origin": "PalletsOrigin"
+            },
+            "AuthorityOrigin": "DelayedOrigin",
+            "StorageValue": "Vec<u8>",
+            "GraduallyUpdate": {
+              "key": "StorageKey",
+              "targetValue": "StorageValue",
+              "perBlock": "StorageValue"
+            },
+            "StorageKeyBytes": "Vec<u8>",
+            "StorageValueBytes": "Vec<u8>",
+            "RpcDataProviderId": "Text",
+            "DataProviderId": "u8",
+            "TimestampedValue": {
+              "value": "OracleValue",
+              "timestamp": "Moment"
+            },
+            "TimestampedValueOf": "TimestampedValue",
+            "OrderedSet": "Vec<AccountId>",
+            "OrmlAccountData": {
+              "free": "Balance",
+              "frozen": "Balance",
+              "reserved": "Balance"
+            },
+            "OrmlBalanceLock": {
+              "amount": "Balance",
+              "id": "LockIdentifier"
+            },
+            "AuctionInfo": {
+              "bid": "Option<(AccountId, Balance)>",
+              "start": "BlockNumber",
+              "end": "Option<BlockNumber>"
+            },
+            "DelayedDispatchTime": {
+              "_enum": {
+                "At": "BlockNumber",
+                "After": "BlockNumber"
+              }
+            },
+            "DispatchId": "u32",
+            "Price": "FixedU128",
+            "OrmlVestingSchedule": {
+              "start": "BlockNumber",
+              "period": "BlockNumber",
+              "periodCount": "u32",
+              "perPeriod": "Compact<Balance>"
+            },
+            "VestingScheduleOf": "OrmlVestingSchedule",
+            "OrmlCurrencyId": "u8",
+            "PoolInfo": {
+              "totalShares": "Share",
+              "rewards": "BTreeMap<OrmlCurrencyId, (Balance, Balance)>"
+            },
+            "CompactBalance": "Compact<Balance>",
+            "PoolInfoV0": {
+              "totalShares": "Compact<Share>",
+              "totalRewards": "CompactBalance",
+              "totalWithdrawnRewards": "CompactBalance"
+            },
+            "Share": "u128",
+            "OracleValue": "FixedU128",
+            "RPCAttribute": {
+              "name": "Bytes",
+              "value": "Bytes",
+              "validity": "Bytes",
+              "created": "Moment"
+            },
+            "StorageRpcResult": {
+              "item": "Bytes"
+            },
+            "Keys": "SessionKeys1"
+          }
+        }
+      ],
+      "alias": {
+        "tokens": {
+          "AccountData": "OrmlAccountData",
+          "BalanceLock": "OrmlBalanceLock"
+        }
+      }
+    },
+    "peaq-node-krest": {
+      "rpc": {
+        "oracle": {
+          "getValue": {
+            "description": "Retrieves the oracle value for a given key.",
+            "params": [
+              {
+                "name": "providerId",
+                "type": "RpcDataProviderId"
+              },
+              {
+                "name": "key",
+                "type": "OracleKey"
+              },
+              {
+                "name": "at",
+                "type": "BlockHash",
+                "isHistoric": true,
+                "isOptional": true
+              }
+            ],
+            "type": "Option<TimestampedValue>",
+            "isSubscription": false,
+            "jsonrpc": "oracle_getValue",
+            "method": "getValue",
+            "section": "oracle"
+          },
+          "getAllValues": {
+            "description": "Retrieves all oracle values.",
+            "params": [
+              {
+                "name": "providerId",
+                "type": "RpcDataProviderId"
+              },
+              {
+                "name": "at",
+                "type": "BlockHash",
+                "isHistoric": true,
+                "isOptional": true
+              }
+            ],
+            "type": "Vec<(OracleKey, Option<TimestampedValue>)>",
+            "isSubscription": false,
+            "jsonrpc": "oracle_getAllValues",
+            "method": "getAllValues",
+            "section": "oracle"
+          }
+        },
+        "peaqdid": {
+          "readAttribute": {
+            "description": "Read attribute",
+            "params": [
+              {
+                "name": "didAccount",
+                "type": "AccountId"
+              },
+              {
+                "name": "name",
+                "type": "Bytes"
+              },
+              {
+                "name": "at",
+                "type": "BlockHash",
+                "isHistoric": true,
+                "isOptional": true
+              }
+            ],
+            "type": "Option<RPCAttribute>",
+            "isSubscription": false,
+            "jsonrpc": "peaqdid_readAttribute",
+            "method": "readAttribute",
+            "section": "peaqdid"
+          }
+        },
+        "peaqstorage": {
+          "readAttribute": {
+            "description": "Read attribute",
+            "params": [
+              {
+                "name": "didAccount",
+                "type": "AccountId"
+              },
+              {
+                "name": "itemType",
+                "type": "Bytes"
+              },
+              {
+                "name": "at",
+                "type": "BlockHash",
+                "isHistoric": true,
+                "isOptional": true
+              }
+            ],
+            "type": "Option<StorageRpcResult>",
+            "isSubscription": false,
+            "jsonrpc": "peaqstorage_readAttribute",
+            "method": "readAttribute",
+            "section": "peaqstorage"
+          }
+        }
+      },
+      "types": [
+        {
+          "minmax": [
+            0,
+            null
+          ],
+          "types": {
+            "CallOf": "Call",
+            "DispatchTime": {
+              "_enum": {
+                "At": "BlockNumber",
+                "After": "BlockNumber"
+              }
+            },
+            "ScheduleTaskIndex": "u32",
+            "DelayedOrigin": {
+              "delay": "BlockNumber",
+              "origin": "PalletsOrigin"
+            },
+            "AuthorityOrigin": "DelayedOrigin",
+            "StorageValue": "Vec<u8>",
+            "GraduallyUpdate": {
+              "key": "StorageKey",
+              "targetValue": "StorageValue",
+              "perBlock": "StorageValue"
+            },
+            "StorageKeyBytes": "Vec<u8>",
+            "StorageValueBytes": "Vec<u8>",
+            "RpcDataProviderId": "Text",
+            "DataProviderId": "u8",
+            "TimestampedValue": {
+              "value": "OracleValue",
+              "timestamp": "Moment"
+            },
+            "TimestampedValueOf": "TimestampedValue",
+            "OrderedSet": "Vec<AccountId>",
+            "OrmlAccountData": {
+              "free": "Balance",
+              "frozen": "Balance",
+              "reserved": "Balance"
+            },
+            "OrmlBalanceLock": {
+              "amount": "Balance",
+              "id": "LockIdentifier"
+            },
+            "AuctionInfo": {
+              "bid": "Option<(AccountId, Balance)>",
+              "start": "BlockNumber",
+              "end": "Option<BlockNumber>"
+            },
+            "DelayedDispatchTime": {
+              "_enum": {
+                "At": "BlockNumber",
+                "After": "BlockNumber"
+              }
+            },
+            "DispatchId": "u32",
+            "Price": "FixedU128",
+            "OrmlVestingSchedule": {
+              "start": "BlockNumber",
+              "period": "BlockNumber",
+              "periodCount": "u32",
+              "perPeriod": "Compact<Balance>"
+            },
+            "VestingScheduleOf": "OrmlVestingSchedule",
+            "OrmlCurrencyId": "u8",
+            "PoolInfo": {
+              "totalShares": "Share",
+              "rewards": "BTreeMap<OrmlCurrencyId, (Balance, Balance)>"
+            },
+            "CompactBalance": "Compact<Balance>",
+            "PoolInfoV0": {
+              "totalShares": "Compact<Share>",
+              "totalRewards": "CompactBalance",
+              "totalWithdrawnRewards": "CompactBalance"
+            },
+            "Share": "u128",
+            "OracleValue": "FixedU128",
+            "RPCAttribute": {
+              "name": "Bytes",
+              "value": "Bytes",
+              "validity": "Bytes",
+              "created": "Moment"
+            },
+            "StorageRpcResult": {
+              "item": "Bytes"
+            },
+            "Keys": "SessionKeys1"
+          }
+        }
+      ],
+      "alias": {
+        "tokens": {
+          "AccountData": "OrmlAccountData",
+          "BalanceLock": "OrmlBalanceLock"
+        }
+      }
     },
     "phoenix-node": {
       "types": [
@@ -95170,6 +95833,7 @@ export const typesBundle = {
                 "Wasm": "AccountId"
               }
             },
+            "EthTransaction": "LegacyTransaction",
             "EraStakingPoints": {
               "total": "Balance",
               "stakers": "BTreeMap<AccountId, Balance>",

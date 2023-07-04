@@ -134,7 +134,7 @@ export interface UseAccountInfo {
   toggleIsEditingTags: () => void;
   onSaveName: () => void;
   onSaveTags: () => void;
-  onSetGenesisHash: (genesisHash: string | null) => void;
+  onSetGenesisHash: (genesisHash: HexString | null) => void;
   onForgetAddress: () => void;
   setIsEditingName: (isEditing: boolean) => void;
   setIsEditingTags: (isEditing: boolean) => void;
@@ -170,7 +170,7 @@ export interface Judgement {
 
 export type UseJudgements = Judgement[]
 
-export type BatchType = 'all' | 'default';
+export type BatchType = 'all' | 'default' | 'force';
 
 export interface BatchOptions {
   max?: number;
