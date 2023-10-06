@@ -82,7 +82,7 @@
     "concurrently": "^8.2.0",
     "devtron": "^1.4.0",
     "dnslink-cloudflare": "^3.0.0",
-    "electron": "25.8.1",
+    "electron": "25.8.4",
     "electron-builder": "23.6.0",
     "electron-builder-notarize": "^1.5.1",
     "extensionless": "^1.4.5",
