@@ -16718,8 +16718,8 @@ fsevents@~2.3.2:
   linkType: hard
 
 "tar@npm:^4.0.2":
-  version: 4.4.17
-  resolution: "tar@npm:4.4.17"
+  version: 4.4.19
+  resolution: "tar@npm:4.4.19"
   dependencies:
     chownr: ^1.1.4
     fs-minipass: ^1.2.7
@@ -16728,7 +16728,7 @@ fsevents@~2.3.2:
     mkdirp: ^0.5.5
     safe-buffer: ^5.2.1
     yallist: ^3.1.1
-  checksum: e3908e428759e156e19459cc886d4ec80e26335a13d79e6ec3e65e3fe22b135e788585478da480472029af6b0d6c8295d03d817878537575673cffe4de9626b1
+  checksum: 423c8259b17f8f612cef9c96805d65f90ba9a28e19be582cd9d0fcb217038219f29b7547198e8fd617da5f436376d6a74b99827acd1238d2f49cf62330f9664e
   languageName: node
   linkType: hard
 
