@@ -1909,7 +1909,7 @@ __metadata:
     "@polkadot/dev": ^0.75.26
     "@types/tmp": ^0.2.3
     copy-webpack-plugin: ^11.0.0
-    electron: 25.8.4
+    electron: 39.8.4
     electron-builder: 23.6.0
     electron-builder-notarize: ^1.5.1
     electron-log: ^5.0.0-beta.23
@@ -3437,7 +3437,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:^18.11.18":
+"@types/node@npm:*":
   version: 18.16.0
   resolution: "@types/node@npm:18.16.0"
   checksum: 63e0042136663b9e85ce503a4c65406cc6621fdba63ea66c74b4b1364a9aa9bdb57cadcb76696abab177f38a819b0fa6ace9e7f1647dcb990aedb1b4bd01012f
@@ -3448,6 +3448,15 @@ __metadata:
   version: 12.20.19
   resolution: "@types/node@npm:12.20.19"
   checksum: 00b623beed4d4b17ad8d60bd2e99a0acab1b95e1d2242d1e2c313abd05a639ecb902c33c5970436d2fd13d5d772747dec6ec73d7f40ad799fe09a35009566699
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:^22.7.7":
+  version: 22.19.15
+  resolution: "@types/node@npm:22.19.15"
+  dependencies:
+    undici-types: ~6.21.0
+  checksum: 6e78cdb6cec95770432aceff75b349610b2a8c6e3b661fa6643afa199e49b2ada081546b74c79f3b1bd922fbf5e1b52f7714f6d9d8d275d2083578821328d33c
   languageName: node
   linkType: hard
 
@@ -7695,16 +7704,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"electron@npm:25.8.4":
-  version: 25.8.4
-  resolution: "electron@npm:25.8.4"
+"electron@npm:39.8.4":
+  version: 39.8.4
+  resolution: "electron@npm:39.8.4"
   dependencies:
     "@electron/get": ^2.0.0
-    "@types/node": ^18.11.18
+    "@types/node": ^22.7.7
     extract-zip: ^2.0.1
   bin:
     electron: cli.js
-  checksum: 1e021cf83747d73d1629027a82a344ed22c9256309f712cf785eec622a9112c53936209a74ef8de546c28fa9961e831d03dc66a8115ce3835c7616dc7a6d2293
+  checksum: 25f22dac3724e93c2788880f2605ea531e62e1b43595b6476d8423c1ad0dc23902ea7cce061f4d384701614a92f1189cbf4b7c8f7e6d946f7925f1a5b35d0068
   languageName: node
   linkType: hard
 
@@ -13952,7 +13961,7 @@ fsevents@~2.3.2:
     concurrently: ^8.2.0
     devtron: ^1.4.0
     dnslink-cloudflare: ^3.0.0
-    electron: 25.8.4
+    electron: 39.8.4
     electron-builder: 23.6.0
     electron-builder-notarize: ^1.5.1
     extensionless: ^1.4.5
@@ -17315,6 +17324,13 @@ fsevents@~2.3.2:
   version: 0.1.2
   resolution: "unc-path-regex@npm:0.1.2"
   checksum: a05fa2006bf4606051c10fc7968f08ce7b28fa646befafa282813aeb1ac1a56f65cb1b577ca7851af2726198d59475bb49b11776036257b843eaacee2860a4ec
+  languageName: node
+  linkType: hard
+
+"undici-types@npm:~6.21.0":
+  version: 6.21.0
+  resolution: "undici-types@npm:6.21.0"
+  checksum: 46331c7d6016bf85b3e8f20c159d62f5ae471aba1eb3dc52fff35a0259d58dcc7d592d4cc4f00c5f9243fa738a11cfa48bd20203040d4a9e6bc25e807fab7ab3
   languageName: node
   linkType: hard
 
